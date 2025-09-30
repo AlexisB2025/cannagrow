@@ -1,15 +1,6 @@
+// pages/_app.js
 import '../styles/globals.css'
-import { useEffect } from 'react';
 
-function MyApp({ Component, pageProps }){
-  useEffect(()=>{
-    if(typeof window !== 'undefined'){
-      const t = localStorage.getItem('theme') || 'dark';
-      document.body.setAttribute('data-theme', t);
-    }
-  },[]);
-
+export default function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
-
-export default MyApp;
